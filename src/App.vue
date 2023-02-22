@@ -1,6 +1,9 @@
 <template>
   <div class="app-container">
     <h1>App 根组件</h1>
+
+    <button @click="flag = !flag">Toggle Flag</button>
+    <Test info="你好" v-if="flag"></Test>
     <hr />
 
     <div class="box">
@@ -16,11 +19,19 @@
 //1.导入需要使用的.vue组件
 import Left from '@/components/Left.vue';
 import Right from '@/components/Right.vue';
+import Test from '@/components/Test.vue';
 export default {
+  data() {
+    return {
+      flag: true
+    }
+  },
+
   //2.注册组件
   components: {
     Left,
-    Right
+    Right,
+    Test
   }
 }
 </script>
